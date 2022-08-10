@@ -1,0 +1,27 @@
+
+{% extends "registration\loginbase.html" %}
+
+
+
+
+{% block content %}
+<div class="col-md-10 grid-margin stretch-card" style="margin: 100px auto;">
+    <div class="card" >
+      <div class="card-body">
+        <h4 class="card-title">{{ err_message }}</h4>
+        <!-- <p class="card-description">
+          Branch : {{user_info.branchname}} <br>
+          staff status: 
+          {% if user_info.is_admin %}
+          administrator
+          {% else %}
+          Branch User
+          {% endif %}
+        </p> -->
+
+
+       
+      </div>
+    </div>
+  </div>
+{% endblock %}

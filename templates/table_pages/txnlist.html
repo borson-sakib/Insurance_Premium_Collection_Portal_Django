@@ -1,0 +1,135 @@
+{% extends "base.html" %}
+
+{% block content%}
+
+        <!-- <h1>Data Verification</h1>
+        
+     
+
+        <form action="./verified" method="POST">
+            {% csrf_token %}
+            <label for="userid">USERID:</label><br>
+            <input type="text" id="userid" name="userid" value="50154800"><br>
+            <label for="policynum">POLICY NUMBER:</label><br>
+            <input type="text" id="policynum" name="policynum" value="0000060935"><br><br>
+            <input type="submit" value="Submit">
+          </form> -->
+
+          <div class="col-lg-5 grid-margin stretch-card">
+            <div class="card">
+              <div class="card-body">
+                <h4 class="card-title">Transaction Summary</h4>
+                <p class="card-description">- {{date}}</p>
+                {%  if user_info.is_staff == False %}
+                <p class="card-description">- <strong>{{user_info.branchname.branch_name}}</strong></p>
+                {% endif %}
+                
+                <!-- <p class="card-description">
+                  Add class <code>.table-striped</code>
+                </p> -->
+                <hr>
+                <div> 
+
+                  <!-- <h7 class="text-success fw-bold">Branch - </h7>
+                  <h7 class="badge badge-success display-4"></h7>
+<hr> -->
+                  <h7 class="text-success fw-bold">Total Transactions - </h7>
+                  <h7 class="badge badge-success display-4">{{total_txn}}</h7>
+                  
+                  <hr>
+                <h7 class="text-success fw-bold">Total Premium Collection - </h7>
+              <h7 class="badge badge-danger display-4"><strong>{{sum}}</strong>   TK</h7>  
+              </div>
+              </div>
+             
+            </div>
+          </div>
+
+          <div class="col-lg-12 grid-margin stretch-card">
+            <div class="card">
+              <div class="card-body">
+                <h4 class="card-title">Transaction List </h4>
+                <p class="card-description"> - {{date}}</p>
+                <!-- <p class="card-description">
+                  Add class <code>.table-striped</code>
+                </p> -->
+                <div class="table-responsive">
+                  <table class="table table-striped">
+                    <thead>
+                      <tr>
+                        <th>
+                          Status
+                        </th>
+                        <th>
+                          Transaction ID
+                        </th>
+                        <th>
+                          Policy
+                        </th>
+                        <th>
+                          Amount
+                        </th>
+                        <th>
+                          Mobile Number
+                        </th>
+                        <th>
+                          Date
+                        </th>
+                     
+                          <th>Branch </th>
+                      </tr>
+                    </thead>
+                    <tbody>
+
+                        {% for txn in txns %}
+                            <tr>
+                              <td>{%  if txn.status == True %}
+                              
+                                <i class="mdi mdi-check-circle menu-icon text-success"></i>
+                                {% else %}
+                                <i class="mdi mdi-close-circle menu-icon text-danger"></i>
+                                {% endif %}</td>
+                                <td>{{txn.txn_id}}</td>
+                                <td>{{txn.policy_no}}</td>
+                                <td>{%  if txn.status == True %}
+                              
+                                  <div class="badge badge-success "><strong>{{txn.amount}}</strong></div> 
+                                  {% else %}
+                                  <div class="badge badge-danger "><strong>{{txn.remarks}}</strong></div> 
+                                  {% endif %}</td>
+                                <td>{{txn.payermobile_no}}</td>
+                                <td>{{txn.txn_date}}</td>
+                                
+                                  <td>{{txn.branch.branch_name}}</td>
+                            </tr>
+                        {% endfor %}
+
+
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+              <div class="card-footer " style="margin: 30px auto;">
+                <span >
+                    {% if txns.has_previous %}
+                    <a href="?page=1">&laquo; first</a>
+                    <a  href="?page={{ txns.previous_page_number }}">previous</a>
+                    
+                    {% endif %}
+            
+                    <span class="current">
+                        Page {{ txns.number }} of {{ txns.paginator.num_pages }}.
+                    </span>
+            
+                    {% if txns.has_next %}
+                        <a href="?page={{ txns.next_page_number }}">next</a>
+                        <a href="?page={{ txns.paginator.num_pages }}">last &raquo;</a>
+                    {% endif %}
+                </span>
+              </div>
+            </div>
+          </div>
+
+          <!-- TOTAL TXN SUMMARY -->
+          
+ {% endblock content %}

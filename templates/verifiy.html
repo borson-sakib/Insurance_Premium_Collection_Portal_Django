@@ -1,0 +1,115 @@
+{% extends "base.html" %}
+
+{% block content %}
+        <!-- {% if message is not null %}
+        <div> {{ message }}</div> 
+        {% endif %} -->
+        
+
+        {% if messages %}
+        <ul class="messages">
+            {% for message in messages %}
+            <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+
+            {% endfor %}
+        </ul>
+            <!-- {% for message in messages %}
+            <div class="alert alert-error">
+              <a class="close" href="#" data-dismiss="alert">×</a>
+                {{ message }}
+          </div>
+          {% endfor %} -->
+
+        {% endif %}
+   
+
+        <div class="col-lg-8 grid-margin stretch-card" style="margin: 30px auto;">
+
+          
+          <div class="card ">
+            
+            
+            <div class="card-body">
+              <h4 class="card-title">Transaction info</h4>
+              <!-- <p class="card-description">
+                Add class <code>.table-striped</code>
+              </p> -->
+              <div class="{{ classes }}" role="alert" id="mess">
+                <a href="#" onclick="closess()">×</a>
+                <strong>{{message}}</strong> 
+                <script>
+                  function closess(){
+                    
+                    $('#mess').hide();
+                  }
+                  
+                </script>
+              </div>
+              <div class="table-responsive">
+                <table class="table table-striped">
+                  <thead>
+                    <tr>
+                      <th>
+                        Transaction ID
+                      </th>
+                      <th>
+                        {{txn.txn_id}}
+                      </th>
+                
+                  </thead>
+                  <tbody>
+
+                          <tr>
+                              <td>Policy No</td>
+                              <td>{{txn.policy_no}}</td>
+                       
+                          </tr>
+
+                          <tr>
+                            <td>Amount</td>
+                            <td>{{txn.amount}}</td>
+                          </tr>
+                          <tr>
+                            <td>Mobile Number</td>
+                            <td>{{txn.payermobile_no}}</td>
+                          </tr>
+                          <tr>
+                            <td>Date</td>
+                            <td>{{txn.txn_date}}</td>
+                          </tr>
+                          <tr>
+                            <td>Status</td>
+                            <td>
+                              {%  if txn.status == True %}
+                              
+                              <i class="mdi mdi-check-circle menu-icon text-success"></i>
+                              {% else %}
+                              <i class="mdi mdi-close-circle menu-icon text-danger"></i>
+                              {% endif %}
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>Branch</td>
+                            <td>{{txn.branch.branch_name}}</td>
+                          </tr>
+              
+
+
+                  </tbody>
+                </table>
+              </div>
+            </div>
+       
+          </div>
+        </div>
+
+
+      
+        <!-- <button type="button" onclick="alert('Hello world!')">Next</button> -->
+
+        <!-- <form action="./txn_cnfrm" method="POST">
+            {% csrf_token %}
+            <input type="hidden" id="userid" name="userid" value="50154800"><br>
+            <input type="submit" value="Next">
+          </form> -->
+{% endblock content %}

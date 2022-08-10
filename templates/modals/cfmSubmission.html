@@ -1,0 +1,76 @@
+<!-- <div class="card">
+  <div class="card-body">
+    <div class="container mt-3">
+        <h3>Modal Example</h3>
+        <p>Click on the button to open the modal.</p>
+        
+        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#myModal">
+          Open modal
+        </button>
+      </div>
+                
+  </div>
+</div> -->
+
+<div class="modal" id="myModal">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        
+            
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <h4 class="modal-title">Confirm Payment?</h4>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+  
+        <!-- Modal body -->
+        <div class="modal-body">
+            
+            <div class="table-responsive">
+                <table class="table table-striped">
+                    
+
+                  <thead>
+                    <tr>
+                      <th>
+                        Policy No
+                      </th>
+                      <th id="modal-policy-no">
+                        
+                      </th>
+                
+                  </thead>
+                  <tbody>
+
+
+                          <tr>
+                            <td>Amount</td>
+                            <td id="modal-amount">
+                                
+                            </td>
+                          </tr>
+                          <tr>
+                            <td> Payer Mobile Number</td>
+                            <td id="modal-mobile-no">
+                                
+                            </td>
+                          </tr>
+                        
+                    
+
+
+                  </tbody>
+                </table>
+            
+              </div>
+        </div>
+  
+        <!-- Modal footer -->
+        <div class="modal-footer">
+          <button type="submit"  class="btn btn-success" >Submit</button>
+          <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+        </div>
+    
+      </div>
+    </div>
+  </div>

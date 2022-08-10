@@ -1,0 +1,15 @@
+
+{
+"static_cred" :[{
+"USERID": "50154800",
+"PWD": "00x7yll33",
+"POLICY": "0000060935",
+"AMOUNT": "30",
+"PAYERMOBILENO": "01731920541",
+"PAYFORMOBILENO": "01777770965",
+"BILLER_CODE": "130",
+"TXNID": "1",
+"TXNDATE": "29-10-2020",
+"MSG": "S"
+}]
+}

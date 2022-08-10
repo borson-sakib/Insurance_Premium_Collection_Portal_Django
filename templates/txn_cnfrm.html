@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+    </head>
+    <body>
+        <h1>Data Verification</h1>
+        
+     
+        <!-- {
+            "USERID": "50154800",
+            "PWD": "00x7yll33",
+            "POLICY": "0000060935",
+            "AMOUNT": "30",
+            "PAYERMOBILENO": "01731920541",
+            "PAYFORMOBILENO": "01777770965",
+            "BILLER_CODE": "130",
+            "TXNID": "1",
+            "TXNDATE": "29-10-2020",
+            "MSG": "S"
+            }; -->
+
+        <form action="./txn_cnfrm_success" method="POST">
+            {% csrf_token %}
+            <label for="userid">USERID:</label><br>
+            <input type="text" id="userid" name="userid" value=""><br>
+
+            <label for="pwd">PWD:</label><br>
+            <input type="text" id="pwd" name="pwd" value=""><br><br>
+
+            <label for="policynum">POLICY NUMBER:</label><br>
+            <input type="text" id="policynum" name="policynum" value=""><br>
+
+            <label for="amount">AMOUNT:</label><br>
+            <input type="text" id="amount" name="amount" value=""><br>
+            
+            <label for="payermobileno">PAYERMOBILENO:</label><br>
+            <input type="text" id="payermobileno" name="payermobileno" value=""><br>
+
+            <label for="payformobileno">PAYFORMOBILENO:</label><br>
+            <input type="text" id="payformobileno" name="payformobileno" value=""><br>
+
+            <label for="billercode">BILLER_CODE:</label><br>
+            <input type="text" id="billercode" name="billercode" value=""><br>
+
+            <label for="txnid">TXNID:</label><br>
+            <input type="text" id="txnid" name="txnid" value=""><br>
+
+            <label for="txndate">TXNDATE:</label><br>
+            <input type="text" id="txndate" name="txndate" value=""><br>
+
+            <label for="msg">MSG:</label><br>
+            <input type="text" id="msg" name="msg" value=""><br>
+            <br>
+
+
+            <input type="submit" value="Submit">
+          </form>
+    
+    </body>
+</html>

@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="col-md-10 grid-margin stretch-card" style="margin: 30px auto;">
+    <div class="card" >
+      <div class="card-body">
+        <h4 class="card-title">Hello {{user_info.email}}</h4>
+        <p class="card-description">
+          Branch : {{user_info.branchname.branch_name}} <br>
+          staff status: 
+          {% if user_info.is_admin %}
+          administrator
+          {% else %}
+          Branch User
+          {% endif %}
+        </p>
+
+
+       
+      </div>
+    </div>
+  </div>
+{% endblock %}

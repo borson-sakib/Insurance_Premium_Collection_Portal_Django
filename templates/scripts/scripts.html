@@ -1,0 +1,26 @@
+
+{% load static %}
+<script>
+  $(document).ready(function() {
+    // $("#exampleModal").modal();
+  
+
+const myModal = document.getElementById('exampleModal')
+const myInput = document.getElementById('exampleModal')
+
+myModal.addEventListener('shown.bs.modal', () => {
+  myInput.focus()
+})
+});
+
+function modalupdate(){
+  $("#modal-amount").text($('#amount').val());
+  $("#amount-input").val= $('#amount').val();
+  $("#modal-mobile-no").text($('#payermobileno').val());
+  $("#mobile-no-input").val() = $('#payermobileno').val();
+  $("#modal-policy-no").text($('#policynum').val());
+  $("#policy-no-input").val()= $('#policynum').val();
+
+}
+
+</script>

@@ -1,0 +1,33 @@
+{% load static %}
+
+
+<!-- partial:partials/_sidebar.html -->
+<nav class="sidebar sidebar-offcanvas" id="sidebar">
+    <ul class="nav">
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'landing' %}">
+          <i class="mdi mdi-home menu-icon"></i>
+          <span class="menu-title">Home</span>
+        </a>
+      </li>
+      {% if user_info.is_staff %}
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'register' %}">
+          <i class="mdi mdi mdi-account-plus menu-icon"></i>
+          <span class="menu-title">Create User</span>
+        </a>
+      </li>
+
+      
+      {% endif %}
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'report' %}">
+          <i class="mdi mdi-more menu-icon"></i>
+          <span class="menu-title"> Reports</span>
+        </a>
+      </li>
+
+ 
+    </ul>
+  </nav>
+  <!-- partial -->
